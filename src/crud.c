@@ -20,7 +20,21 @@ void create_contact(char name[], char phone[], char email[])
     }
     else
     {
-        printf("Your contact list is full.");
+        printf("Your contact list is full.\n");
+    }
+}
+
+void read_contacts()
+{
+    printf("You do not have any contact.\n");
+
+    for (int i = 0; i < contact_counter; i++)
+    {
+        struct Contact contact = contact_list[i];
+        printf("[%d] Name: %s\n", i, contact.name);
+        printf("    Phone: %s\n", contact.phone);
+        printf("    Email: %s\n", contact.email);
+        printf("-------------------\n");
     }
 }
 
