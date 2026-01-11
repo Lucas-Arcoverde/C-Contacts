@@ -3,7 +3,7 @@
 
 #include "contact.h"
 #include "crud.h"
-// #include "utils.h"
+#include "utils.h"
 
 int main(int argc, char *argv[])
 {
@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 
     if (argc == 1 || strcmp(flag, "--help") == 0 || strcmp(flag, "-h") == 0)
     {
-        // display_help_message();
+        display_help_message(argv[0]);
         return 0;
     }
 
