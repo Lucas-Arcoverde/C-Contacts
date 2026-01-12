@@ -38,3 +38,17 @@ void read_contacts()
     }
 }
 
+void update_contact(int contact_index, char name[], char phone[], char email[])
+{
+    if (contact_index >= contact_counter || contact_index < 0)
+    {
+        printf("Invalid index.\n");
+    }
+    else
+    {
+        strcpy(contact_list[contact_index].name, name);
+        strcpy(contact_list[contact_index].phone, phone);
+        strcpy(contact_list[contact_index].email, email);
+    }
+}
+
