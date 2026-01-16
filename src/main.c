@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 
     else if (strcmp(flag, "--add") == 0 || strcmp(flag, "-a") == 0)
     {
-        if (argc <= 2)
+        if (argc < 5)
         {
             return 1;
         }
@@ -32,11 +32,12 @@ int main(int argc, char *argv[])
     else if (strcmp(flag, "--view") == 0 || strcmp(flag, "-v") == 0)
     {
         read_contacts();
+        return 0;
     }
 
     else if (strcmp(flag, "--update") == 0 || strcmp(flag, "-u") == 0)
     {
-        if (argc <= 2)
+        if (argc <= 6)
         {
             return 1;
         }
@@ -50,6 +51,19 @@ int main(int argc, char *argv[])
 
         update_contact(contact_index, name, phone, email);
 
+    }
+
+    else if (strcmp(flag, "--remove") == 0 || strcmp(flag, "-r") == 0)
+    {
+        if (argc < 3)
+        {
+            return 1;
+        }
+        
+        char * contact_index_input = argv[2];
+        int contact_index = atoi(contact_index_input);
+
+        delete_contact(contact_index);
     }
 
     return 0;
