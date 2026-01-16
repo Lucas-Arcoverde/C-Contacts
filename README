@@ -1,0 +1,49 @@
+C-Contacts Manager
+by Lucas A Melo
+version 1.0 01.16.2026
+
+OVERVIEW
+--------
+
+Simple cli contact book programmed in C. It is project made for fun and learning, I do not recommend you to use it seriously.
+The program only have basic features but works fine. AI was only used to ask questions and fix some code that didnot work.
+
+FEATURES
+--------
+
+At this moment, CCM --- how i like to call --- only works in command line interface, but maybe i will make a TUI for it later.
+
+It can:
+
+* Add 100 contacts --- this can be changed in the source code, so do all the features.
+* Update/Change a contact info.
+* View your contact list.
+* Delete a contact from your list.
+
+USAGE
+-----
+
+1 - Clone the repository.
+
+$ git clone https://www.github.com/Lucas-Arcoverde?C-Contacts
+
+2 - Change directory.
+
+$ cd C-Contacts
+
+3 - Compile the source files.
+
+$ gcc -o ccm src/*.c
+
+4 - Run.
+
+$ ./ccm
+
+FEEDBACK AND CONTRIBUTING
+-------------------------
+
+If you find any bug, something i did wrong or that can be improved, please let me know. Open an issue or send a pull request.
+Remember give it a star!
+
+Thank you.
+
