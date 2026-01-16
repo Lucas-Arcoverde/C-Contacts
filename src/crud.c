@@ -2,6 +2,7 @@
 #include <string.h>
 #include "contact.h"
 #include "crud.h"
+#include "data.h"
 
 #define MAX_CONTACTS 100
 
@@ -22,6 +23,8 @@ void create_contact(char name[], char phone[], char email[])
     {
         printf("Your contact list is full.\n");
     }
+
+    save_file(contact_list, contact_counter);
 }
 
 void read_contacts()
@@ -50,6 +53,8 @@ void update_contact(int contact_index, char name[], char phone[], char email[])
         strcpy(contact_list[contact_index].phone, phone);
         strcpy(contact_list[contact_index].email, email);
     }
+
+    save_file(contact_list, contact_counter);
 }
 
 void delete_contact(int contact_index)
@@ -68,5 +73,7 @@ void delete_contact(int contact_index)
         }
         contact_counter--;
     }
+
+    save_file(contact_list, contact_counter);
 }
 
