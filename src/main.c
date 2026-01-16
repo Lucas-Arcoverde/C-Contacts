@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
         return 0;
     }
 
-    if (strcmp(flag, "--add") == 0 || strcmp(flag, "-a") == 0)
+    else if (strcmp(flag, "--add") == 0 || strcmp(flag, "-a") == 0)
     {
         if (argc <= 2)
         {
@@ -26,6 +26,16 @@ int main(int argc, char *argv[])
         char * phone = argv[3];
         char * email = argv[4];
         create_contact(name, phone, email);
+    }
+
+    else if (strcmp(flag, "--view") == 0 || strcmp(flag, "-v") == 0)
+    {
+        if (argc <= 2)
+        {
+            return 1;
+        }
+
+        read_contacts();
     }
 
     return 0;
