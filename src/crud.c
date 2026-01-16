@@ -52,3 +52,21 @@ void update_contact(int contact_index, char name[], char phone[], char email[])
     }
 }
 
+void delete_contact(int contact_index)
+{
+    if (contact_index >= contact_counter || contact_index < 0)
+    {
+        printf("Invalid index.\n");
+    }
+    else
+    {
+        for (int i = contact_index; i < contact_counter; i++)
+        {
+            strcpy(contact_list[i].name, contact_list[i+1].name);
+            strcpy(contact_list[i].phone, contact_list[i+1].phone);
+            strcpy(contact_list[i].email, contact_list[i+1].email);
+        }
+        contact_counter--;
+    }
+}
+
