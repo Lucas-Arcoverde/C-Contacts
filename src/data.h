@@ -6,5 +6,6 @@
 #define DATA_FILE "data.csv"
 
 int save_file(struct Contact contact_list[], int quant);
+int load_file(struct Contact contact_list[]);
 
 #endif
