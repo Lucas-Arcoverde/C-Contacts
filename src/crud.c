@@ -11,6 +11,8 @@ struct Contact contact_list[MAX_CONTACTS];
 
 void create_contact(char name[], char phone[], char email[])
 {
+    contact_counter = load_file(contact_list);
+
     if (contact_counter < MAX_CONTACTS)
     {
         strcpy(contact_list[contact_counter].name, name);
@@ -29,7 +31,13 @@ void create_contact(char name[], char phone[], char email[])
 
 void read_contacts()
 {
-    printf("You do not have any contact.\n");
+    contact_counter = load_file(contact_list);
+    
+    if (contact_counter == 0)
+    {
+        printf("You do not have any contact.\n");
+        return;
+    }
 
     for (int i = 0; i < contact_counter; i++)
     {
@@ -43,6 +51,7 @@ void read_contacts()
 
 void update_contact(int contact_index, char name[], char phone[], char email[])
 {
+    contact_counter = load_file(contact_list);
     if (contact_index >= contact_counter || contact_index < 0)
     {
         printf("Invalid index.\n");
@@ -59,6 +68,7 @@ void update_contact(int contact_index, char name[], char phone[], char email[])
 
 void delete_contact(int contact_index)
 {
+    contact_counter = load_file(contact_list);
     if (contact_index >= contact_counter || contact_index < 0)
     {
         printf("Invalid index.\n");
